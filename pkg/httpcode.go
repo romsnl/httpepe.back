@@ -1,0 +1,85 @@
+package httpcode
+
+// httpcode represents data about a http code.
+type httpcode struct {
+	Id      float64 `json:"id"`
+	Message string  `json:"message"`
+}
+
+// codes slice to seed http code data.
+var codes = []httpcode{
+	{Id: 100, Message: "Continue"},
+	{Id: 101, Message: "Switching Protocols"},
+	{Id: 102, Message: "Processing"},
+	{Id: 103, Message: "Early Hints"},
+	{Id: 200, Message: "OK"},
+	{Id: 201, Message: "Created"},
+	{Id: 202, Message: "Accepted"},
+	{Id: 203, Message: "Non-Authoritative Information"},
+	{Id: 204, Message: "No Content"},
+	{Id: 206, Message: "Partial Content"},
+	{Id: 207, Message: "Multi-Status"},
+	{Id: 300, Message: "Multiple Choices"},
+	{Id: 301, Message: "Moved Permanently"},
+	{Id: 302, Message: "Found"},
+	{Id: 303, Message: "See Other"},
+	{Id: 304, Message: "Not Modified"},
+	{Id: 305, Message: "Use Proxy"},
+	{Id: 307, Message: "Temporary Redirect"},
+	{Id: 308, Message: "Permanent Redirect"},
+	{Id: 400, Message: "Bad Request"},
+	{Id: 401, Message: "Unauthorized"},
+	{Id: 402, Message: "Payment Required"},
+	{Id: 403, Message: "Forbidden"},
+	{Id: 404, Message: "Not Found"},
+	{Id: 405, Message: "Method Not Allowed"},
+	{Id: 406, Message: "Not Acceptable"},
+	{Id: 407, Message: "Proxy Authentication Required"},
+	{Id: 408, Message: "Request Timeout"},
+	{Id: 409, Message: "Conflict"},
+	{Id: 410, Message: "Gone"},
+	{Id: 411, Message: "Length Required"},
+	{Id: 412, Message: "Precondition Failed"},
+	{Id: 413, Message: "Payload Too Large"},
+	{Id: 414, Message: "Request-URI Too Long"},
+	{Id: 415, Message: "Unsupported Media Type"},
+	{Id: 416, Message: "Request Range Not Satisfiable"},
+	{Id: 417, Message: "Expectation Failed"},
+	{Id: 418, Message: "I’m a teapot"},
+	{Id: 420, Message: "Enhance Your Calm"},
+	{Id: 421, Message: "Misdirected Request"},
+	{Id: 422, Message: "Unprocessable Entity"},
+	{Id: 423, Message: "Locked"},
+	{Id: 424, Message: "Failed Dependency"},
+	{Id: 425, Message: "Too Early"},
+	{Id: 426, Message: "Upgrade Required"},
+	{Id: 429, Message: "Too Many Requests"},
+	{Id: 431, Message: "Request Header Fields Too Large"},
+	{Id: 444, Message: "No Response"},
+	{Id: 450, Message: "Blocked by Windows Parental Controls"},
+	{Id: 451, Message: "Unavailable For Legal Reasons"},
+	{Id: 497, Message: "HTTP Request Sent to HTTPS Port"},
+	{Id: 498, Message: "Token expired/invalid"},
+	{Id: 499, Message: "Client Closed Request"},
+	{Id: 500, Message: "Internal Server Error"},
+	{Id: 501, Message: "Not Implemented"},
+	{Id: 502, Message: "Bad Gateway"},
+	{Id: 503, Message: "Service Unavailable"},
+	{Id: 504, Message: "Gateway Timeout"},
+	{Id: 506, Message: "Variant Also Negotiates"},
+	{Id: 507, Message: "Insufficient Storage"},
+	{Id: 508, Message: "Loop Detected"},
+	{Id: 509, Message: "Bandwidth Limit Exceeded"},
+	{Id: 510, Message: "Not Extended"},
+	{Id: 511, Message: "Network Authentication Required"},
+	{Id: 521, Message: "Web Server Is Down"},
+	{Id: 522, Message: "Connection Timed Out"},
+	{Id: 523, Message: "Origin Is Unreachable"},
+	{Id: 525, Message: "SSL Handshake Failed"},
+	{Id: 599, Message: "Network Connect Timeout Error"},
+}
+
+// GetAllCodes returns all http codes.
+func GetAllCodes() ([]httpcode, error) {
+	return codes, nil
+}
